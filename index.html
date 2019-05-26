@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Consejos para Debian</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="stilo.css">
+    <link rel="shortcut icon" href="imagenes/favicon.ico">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script>$(function () {
+             $('[data-toggle="tooltip"]').tooltip()
+       })</script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+            <a class="navbar-brand" href="#"><img src="imagenes/debian.png" width="32"><strong> Consejos para Debian</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+                
+            <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                 <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <a class="nav-link" href="#resumen">Resumen</a>
+                </li>
+                <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Primeros pasos
+                     </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <a class="dropdown-item" href="#configuracion">Configuración</a>
+                             <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#funcionamiento">Funcionamiento</a>
+                        </div>
+                <li class="nav-item">
+                <a class="nav-link" href="#interfaz">Interfaz</a>
+                </li>
+            </ul>
+            <a href="#contactar"><button class="btn-secondary" type="button" class="btn btn-primary">+info</button></a>
+            </form>
+            </div>
+        </nav>
+        <section id="jumbo">
+                <div class="jumbotron">
+                     <h2 class="display-4">Una pequeña guía</h2>
+                     <p class="lead">En esta página compartiré algunos consejos que me han facilitado mucho la vida con Debian</p>
+                            
+                    <hr class="my-4">
+                    <p>Esto es solo una pequeña recopilación de "truquillos" para usuarios novatos, es probable que usuarios avanzados ya los conozcan de antes ¡Siempre se empieza por algo!</p>
+                    <p>No soy ningún experto, solo trato de ayudar a los primeros usuarios que puedan sentirse perdidos nada más comenzar con su nueva instalación, 
+                        si eres nuevo en esto y echas de menos las cómodas configuraciónes que traía por defecto Ubuntu, no te preocupes, solventaremos varias de ellas.</p>
+                    <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#modal1">Saber
+                        más</a>
+                    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Antes de nada...</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                <div class="modal-body">
+                                      En esta ocasión, el tutorial está especialmente pensado para Debian 9 y el enterno de escritorio XFCE, sin embargo, muchas configuraciones coincidirán con tu versión de Debian.
+                                      La sección de interfaz será la más diferente en caso de tener otro entorno de escritorio (obviamente).
+                                 </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+        </section>
+<div <div class="container-fluid">
+    <section id="resumen">
+          <div class="lugares">
+             <h5 class="display-4"><br>Resumen<br></h5>
+                <div class="card-deck mt-8">
+                    <div class="card">
+                         <img src="imagenes/funcion.png" class="card-img-top rounded" alt="Descripcion 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Funcionamiento</h5>
+                            <p class="card-text">Cambiaremos algunas configuraciones algo "inconvenientes" para que sean más amigables para los usuarios comunes.
+                                  Entre ellas, el inicio de sesión y sudo.
+                             </p>
+                            <p class="card-text"><small class="text-muted">Tu comodida es la prioridad</small></p>
+                         </div>
+                     </div>
+                    <div class="card">
+                         <img src="imagenes/config.png" class="card-img-top" alt="Descripcion 2">
+                         <div class="card-body">
+                             <h5 class="card-title">Configuración</h5>
+                             <p class="card-text">¿Molesta mucho cuando parte de tu hardware no funciona debido a que el software
+                                 propietario para hacerlo funcionar no está incluido por defecto en la distribución, verdad? 
+                                 Haremos unos "sacrificios" de libertad para poder usar ese hardware y tener una máquina funcional (aunque los fabricantes
+                                 deberían liberar el código para evitar estas situaciones).
+                            </p>
+                         </div>
+                     </div>
+                    <div class="card">
+                         <img src="imagenes/resultado.jpg" class="card-img-top" alt="Descripcion 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Interfaz</h5>
+                            <p class="card-text">
+                                    Seamos honestos, el aspecto que trae XFCE de por sí no es lo más bonito del mundo. Pero no te preocupes,
+                                    la libertad de linux nos permite modificar su aspecto por completo y a nuestro gusto.
+                                    Como resultado, tendremos un escritorio agradable y que invita a ser usado.
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<div class="container-fluid" id="configuracion">
+    <br>
+    <h1>Configuración</h1>
+    <p>Una de las primeras cosas que extrañan en Debian es que en <strong>lightDM</strong> no vienen por defecto los nombres de usuarios
+    del equipo (seguramente enfocado a la privacidad), pero en el caso de que le demos un uso doméstico a nuestro equipo,
+    vamos a preferir que nuestros nombres no estén ocultos. Es sorprendentemente fácil de arreglar, tan solo debemos
+    quitar el comentario en la línea <strong>"greeter-hide-users =false"</strong> en /etc/lightdm/lightdm.conf</p>
+    <p>Para configurar los permisos y evitar dolores de cabeza, primero instalaremos sudo desde la terminal con <strong>apt install sudo</strong>.
+    Ahora tienes que escribir <strong>adduser "tunombredeusuarioaquí" sudo</strong></p>
+    <p>A continuación tienes unas imágenes mostrando el resultado y otras configuraciones de XFCE que te sorprenderán.
+        Recuerda que mediante aplicaciones como plank, xfce-topmenu-plugin, conky y compton puedes obtener resultados 
+        realmente sorprendentes, no querrás volver al look anterior nunca más. Recuerda que tanto Debian como Ubuntu, como Arch
+        y como muchas distribuciones más permiten este nivel de personalización, así que déjalo a tu gusto. 
+    </p>
+    <header>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                </ol>
+                <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <img src="imagenes/funcion.png" class="d-block w-100" alt="Antes">
+                        <div class="carousel-caption d-none d-md-block">
+                            <p>Antes</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/funcionfinal.jpg" class="d-block w-100" alt="Después">
+                        <div class="carousel-caption d-none d-md-block">
+                            <p>Después</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                       <img src="imagenes/xfceantes.png" class="d-block w-100" alt="Look antiguo">
+                          <div class="carousel-caption d-none d-md-block">
+                       </div>
+                   </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/resultado4.png" class="d-block w-100" alt="Look a-lo-mac">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/resultado2.png" class="d-block w-100" alt="Look moderno">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/resultado3.png" class="d-block w-100" alt="Un look futurista">
+                        <div class="carousel-caption d-none d-md-block">
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        </header>
+</div>
+
+<div class="container-fluid" id="funcionamiento">
+    <br>
+    <h1>Funcionamiento</h1>
+    <h2>Panel táctil</h2>
+    <p>Según el fabricante de tu panel táctil, el software para modificarlo puede ser libre o no. En mi caso,
+        tengo un touchpad Elantech, el cual no podía modificar por defecto, necesitaba instalar algún paquete propietario.
+        En tu caso deberás descargar el paquete que te corresponda mediante Synaptic. Con el comando
+        <strong>egrep -i 'synap|alps|etps|elan' /proc/bus/input/devices </strong> sabrás cuál es tu touchpad.
+        Si necesitas ayuda, en el wiki de Debian está detallado el proceso <strong>https://wiki.debian.org/SynapticsTouchpad</strong>
+    </p>
+</div>
+<div class="container-fluid" id="interfaz">
+        <br>
+        <h1 id="interfaz">Interfaz</h1>
+        <p>Como has podido ver en las imágenes anteriores, la interfaz de XFCE es muy configurable,
+            deja mucha libertad y puede ser configurada de tal forma que parezca familiar a usuarios de otros
+            sistemas operativos como OS X o Windows. 
+        </p>
+        <p>Mediante el gestor de paquetes gráfico Synaptic podemos instalar algunas de las aplicaciones que permiten
+            modificar la interfaz, aunque también podemos usar la terminal.
+        </p>    
+        <section id="collapse">
+                <div class="con">
+                    <h5 class="display-4"><br>Aplicaciones recomendadas</h5>
+                    <br>
+                    <div class="container">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Dock Plank
+                                    </button>
+                                </div>
+                                <!-- Collapse-show indica cual se muestra al principio -->
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Este es uno de los mejores docks para Linux y seguro que salvará la vida de alguien acostumbrado
+                                        a OS X
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Compositor Compton
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        El compositor de ventanas de XFCE no siempre es el más eficiente, así que
+                                        un reemplazo como Compton es la mejor opción. Olvídate del tearing con Compton, 
+                                        porque ya estamos en 2019 como para tener tearing moviendo ventanas.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Menú superior xfce-topmenu-plugin
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        Mueve las pestañas de acción de las aplicaciones a un panel XFCE. Se suele combinar con Plank para
+                                        obtener la mejor experiencia "Mac"
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <section id="contactar">
+                    <div class="container-fluid bg-dark text-light">
+                        <h5 class="display-4" id="contacto"><br>Información<br></h5>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 ">
+                                <dl class="m-5">
+                                    <dt class="Display">Dirección:</dt>
+                                    <dd>Inventada & ficticia nº3</dd>
+                                    <dt>Correo:</dt>
+                                    <dd>loqueseaat@yoquese.com</dd>
+                                    <dt>Teléfono:</dt>
+                                    <dd>666 666 666</dd>
+                                    <dt>Redes Sociales:</dt>
+                                    <dd><a href="https://twitter.com/debian?lang=es" target="blank"><i
+                                                class="fab fa-twitter-square"></i></a>
+                                        <a href="https://www.instagram.com/explore/tags/debian/?hl=es" target="blank"><i
+                                                class="fab fa-instagram"></i></a>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-sm-5 col-md-5 embed-responsive embed-responsive-16by9">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3152.6240436668063!2d-122.45151578468165!3d37.798849579755114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085872afc21754f%3A0x955ffe54d50ef1cc!2sLinux+Foundation!5e0!3m2!1ses!2ses!4v1552673721347" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                </div>
+                
+</div>
+</body>
+<div class="container-fluid">
+    <footer id="contact">
+            <h5 class="display-4"><br>Contactar<br></h5>
+            <div class="container">
+                <form action="mailto:debianssss@hotmail.com">
+                    <div class="form-group">
+                        <div class="row">
+                             <div class="col">
+                                <input type="text" class="form-control" placeholder="Nombre">
+                                <input type=text class="form-control" placeholder="Apellidos">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="email">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" class="form-control" placeholder="Contraseña">
+                            </div>
+                            <div class="col-1 text-right font-weight-bold">
+                                 <p>Área</p>
+                            </div>
+                            <div class="col-5">
+                                 <select class="form-control" id="exampleFormControlSelect1">
+                                     <option>Interfaz</option>
+                                     <option>Configuración</option>
+                                     <option>Terminal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        placeholder="Escribe lo que tengas que decir"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                 <div class="form-group form-check">
+                                     <br>
+                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                     <label class="form-check-label  pt-5 ml-2" for="aceptar"><a href="" data-toggle="modal" data-target="#exampleModal">Al pulsar este botón estoy conforme con la política de privacidad</a></label>
+                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              ...
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                </div>
+                             </div>
+                             <div class="col-1 text-right font-weight-bold">
+                                <p>Provincia</p>
+                           </div>
+                           <div class="col-5">
+                             <select>
+                            <option value="Almeria">Almería</option>
+                            <option value="Cadiz">Cádiz</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Granada">Granada</option>
+                            <option value="Huelva">Huelva</option>
+                            <option value="Jaen">Jaén</option>
+                            <option value="Malaga">Málaga</option>
+                            <option value="Sevilla">Sevilla</option>
+                        </select>
+                           </div>
+                          
+                
+                            <div class="col">
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                           </div>
+                      </div>
+                      
+                                  
+                  </div>
+                  
+             </form>
+         </div>
+    </footer>
+                
+</div>
+
+</html>
